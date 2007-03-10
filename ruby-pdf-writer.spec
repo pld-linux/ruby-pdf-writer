@@ -40,6 +40,8 @@ ruby setup.rb setup
 rdoc --op rdoc lib
 rdoc --ri --op ri lib
 
+rm ri/created.rid
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{ruby_archdir},%{ruby_ridir}}
