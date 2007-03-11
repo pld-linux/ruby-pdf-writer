@@ -1,4 +1,5 @@
 Summary:	PDF generator for Ruby
+Summary(pl.UTF-8):	Generator PDF dla Ruby
 Name:		ruby-pdf-writer
 Version:	1.1.3
 Release:	1
@@ -18,11 +19,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 PDF::Writer for Ruby provides the ability to create PDF documents
-using only native Ruby libraries. There are several demo programs
-available in the demo/ directory. The canonical documentation for
-PDF::Writer is the 95-page manual, manual.pdf, generated using
-bin/techbook (just techbook for RubyGem users) and the manual file
-manual.pwd.
+using only native Ruby libraries. 
+
+%description -l pl.UTF-8
+PDF::Writer dla Ruby dostarcza możliwość tworzenia dokumentów PDF
+przy użyciu jedynie natywnych bibliotek Ruby.
 
 %prep
 %setup -q -n pdf-writer-%{version}
@@ -44,19 +45,23 @@ rm ri/created.rid
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{ruby_archdir},%{ruby_ridir}}
+install -d $RPM_BUILD_ROOT{%{ruby_archdir},%{ruby_ridir},%{_examplesdir}/%{name}-%{version}/images}
 
 ruby setup.rb install \
 	--prefix=$RPM_BUILD_ROOT
 
 cp -a ri/* $RPM_BUILD_ROOT%{ruby_ridir}
+sed -i -e 's|../images|./images|g' demo/chunkybacon.rb
+cp demo/*.rb $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp -r images/chunkybacon.* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/images
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc rdoc
+%doc rdoc README ChangeLog
 %attr(755,root,root) %{_bindir}/*
 %{ruby_rubylibdir}/*
 %{ruby_ridir}/*
+%{_examplesdir}/%{name}-%{version}
