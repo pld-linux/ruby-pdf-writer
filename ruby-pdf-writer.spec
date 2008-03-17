@@ -1,12 +1,12 @@
 Summary:	PDF generator for Ruby
 Summary(pl.UTF-8):	Generator PDF dla Ruby
 Name:		ruby-pdf-writer
-Version:	1.1.3
+Version:	1.1.8
 Release:	1
 License:	Ruby's
 Group:		Development/Languages
-Source0:	http://rubyforge.org/frs/download.php/5991/pdf-writer-%{version}.tar.gz
-# Source0-md5:	5e184fd01c3929b0d0d5269279472d4b
+Source0:	http://rubyforge.org/frs/download.php/33973/pdf-writer.%{version}.tar.bz2
+# Source0-md5:	84c0e3045c99ca0bb27dfa728d4479e3
 #Patch0: %{name}-nogems.patch
 URL:		http://ruby-pdf.rubyforge.org/pdf-writer/
 BuildRequires:	rake
@@ -19,14 +19,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 PDF::Writer for Ruby provides the ability to create PDF documents
-using only native Ruby libraries. 
+using only native Ruby libraries.
 
 %description -l pl.UTF-8
-PDF::Writer dla Ruby dostarcza możliwość tworzenia dokumentów PDF
-przy użyciu jedynie natywnych bibliotek Ruby.
+PDF::Writer dla Ruby dostarcza możliwość tworzenia dokumentów PDF przy
+użyciu jedynie natywnych bibliotek Ruby.
 
 %prep
-%setup -q -n pdf-writer-%{version}
+%setup -q -n pdf_writer-%{version}
 #%patch0 -p1
 #cp %{_datadir}/setup.rb .
 
