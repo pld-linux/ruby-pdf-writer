@@ -11,7 +11,7 @@ Source0:	http://rubyforge.org/frs/download.php/33973/pdf-writer.%{version}.tar.b
 URL:		http://ruby-pdf.rubyforge.org/pdf-writer/
 BuildRequires:	rake
 BuildRequires:	rpmbuild(macros) >= 1.277
-#BuildRequires:	setup.rb = 3.3.1
+#BuildRequires:	setup.rb >= 3.3.1
 Requires:	ruby-color-tools
 Requires:	ruby-transaction-simple
 #BuildArch:	noarch
