@@ -9,8 +9,8 @@ Source0:	http://rubyforge.org/frs/download.php/33973/pdf-writer.%{version}.tar.b
 # Source0-md5:	84c0e3045c99ca0bb27dfa728d4479e3
 #Patch0: %{name}-nogems.patch
 URL:		http://ruby-pdf.rubyforge.org/pdf-writer/
-BuildRequires:	rake
 BuildRequires:	rpmbuild(macros) >= 1.277
+BuildRequires:	ruby-modules
 #BuildRequires:	setup.rb >= 3.3.1
 Requires:	ruby-color-tools
 Requires:	ruby-transaction-simple
